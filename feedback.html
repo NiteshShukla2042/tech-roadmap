@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Roadmap - Share Feedback</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Share your reviews, suggestions, and feedback with the Tech Roadmap team. We use your inputs to build better visual learning paths.">
+    <meta name="keywords" content="Feedback, Contact Us, Suggest Roadmap, Tech Learning Review">
+    <meta name="author" content="Tech Roadmap Team">
+
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets connection -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-dark">
+    <!-- Particle Stars Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button (Hamburger) -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="courses.html#roadmaps" class="nav-link">Roadmaps</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="feedback.html" class="nav-link active">Feedback</a></li>
+                </ul>
+                
+                <!-- Theme Switcher Control -->
+                <div class="theme-switcher-wrapper">
+                    <button class="theme-toggle-btn" id="theme-btn" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+                        <span id="theme-btn-icon">🌓</span>
+                        <span class="theme-btn-text">Theme</span>
+                    </button>
+                    <!-- Theme Dropdown Menu -->
+                    <ul class="theme-dropdown" id="theme-dropdown" role="menu">
+                        <li role="menuitem"><button class="theme-opt-btn active" data-theme="dark"><span class="theme-indicator theme-dark-indicator"></span>Dark Theme</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="yellow"><span class="theme-indicator theme-yellow-indicator"></span>Light Yellow</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="green"><span class="theme-indicator theme-green-indicator"></span>Light Green</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content wrapper -->
+    <main class="container" style="padding-top: 40px;">
+        <!-- Feedback Form Container -->
+        <div class="feedback-container">
+            <h1>Share Your Feedback</h1>
+            <p class="subtitle">We value your suggestions! Help us improve the interactive mind maps and structure of our study materials.</p>
+            
+            <!-- Form Alert (Success / Error alerts dynamically injected here) -->
+            <div id="form-alert" class="form-alert" role="alert"></div>
+
+            <!-- Form Element (novalidate so we can handle custom validations in JS) -->
+            <form id="feedback-form" novalidate>
+                <!-- Name Field Group -->
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    <span class="error-message" id="name-error">Please enter your full name.</span>
+                </div>
+
+                <!-- Email Field Group -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+                    <span class="error-message" id="email-error">Please enter a valid email address.</span>
+                </div>
+
+                <!-- Message Field Group -->
+                <div class="form-group">
+                    <label for="message" class="form-label">Feedback Message</label>
+                    <textarea id="message" class="form-control" placeholder="Tell us what roadmaps you want to see, or how we can improve current paths..." required></textarea>
+                    <span class="error-message" id="message-error">Please write a short message before submitting.</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Feedback</button>
+            </form>
+
+            <!-- Submissions Display Section (Past entries loaded by js/feedback.js) -->
+            <div class="submissions-section" id="submissions-section" style="display: none;">
+                <h2 class="submissions-title">Recent Community Feedback</h2>
+                <div id="submissions-list">
+                    <!-- Cards will be dynamically appended here by js/feedback.js -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+                </a>
+                <p class="footer-tagline">Visualizing paths to career success in technology.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="GitHub">🐙</a>
+                    <a href="#" aria-label="LinkedIn">🔗</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="courses.html">All Courses</a></li>
+                    <li><a href="courses.html#roadmaps">Interactive Roadmaps</a></li>
+                    <li><a href="feedback.html">Share Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="about.html#team">The Team</a></li>
+                    <li><a href="about.html#goals">Future Goals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Themes</h3>
+                <ul>
+                    <li><button class="footer-theme-link" data-theme-footer="dark">Dark Theme</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="yellow">Light Yellow</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="green">Light Green</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Tech Roadmap. All rights reserved. Built for students, educators, and beginners.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Connection -->
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>

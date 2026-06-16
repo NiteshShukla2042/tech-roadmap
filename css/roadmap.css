@@ -1,0 +1,375 @@
+/*
+================================================================
+   TECH ROADMAP - ROADMAP & MIND MAP STYLING
+================================================================
+   Contains styles for visual column layouts, interactive nodes,
+   SVG connector links, progress tracking, and the slide-over
+   details panel. Fully responsive for desktop, tablet, and mobile.
+================================================================
+*/
+
+/* ==========================================
+   1. MIND MAP LAYOUT & WORKSPACE
+   ========================================== */
+.mindmap-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 30px 10px;
+    width: 100%;
+    min-height: 500px;
+    /* Permits scrollbars on smaller viewports */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Custom scrollbars for mindmap panel */
+.mindmap-container::-webkit-scrollbar {
+    height: 8px;
+}
+.mindmap-container::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 10px;
+}
+.mindmap-container::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+.mindmap-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}
+
+/* SVG Vector Canvas Background */
+.mindmap-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* User clicks pass through SVG to click nodes */
+    z-index: 1;
+}
+
+/* SVG Connection Lines */
+.mindmap-line {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 2.5;
+    transition: stroke var(--transition-normal), stroke-width var(--transition-normal);
+}
+
+.mindmap-line.active {
+    stroke: var(--accent-primary);
+    stroke-width: 3.5;
+    filter: drop-shadow(0 0 3px var(--accent-glow));
+}
+
+/* ==========================================
+   2. STAGE COLUMNS & HEADER BAR
+   ========================================== */
+.mindmap-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 280px;
+    z-index: 2; /* Sits above SVG lines */
+    position: relative;
+}
+
+.column-header {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 10px 16px;
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    border: 1px solid var(--border-color);
+    letter-spacing: 0.5px;
+}
+
+/* Headers background colors based on stage levels */
+.column-header.level-beginner {
+    background-color: rgba(16, 185, 129, 0.08);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.column-header.level-intermediate {
+    background-color: rgba(245, 158, 11, 0.08);
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.column-header.level-advanced {
+    background-color: rgba(99, 102, 241, 0.08);
+    color: #6366f1;
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.column-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* ==========================================
+   3. MIND MAP NODE CARDS
+   ========================================== */
+.mindmap-node {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Zoom Hover Animation */
+.mindmap-node:hover {
+    transform: scale(1.04);
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-md), var(--glow-shadow);
+}
+
+/* Selected state highlight on click */
+.mindmap-node.active-node {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Completed node states */
+.mindmap-node.completed-node {
+    border-color: #10b981;
+}
+.mindmap-node.completed-node:hover {
+    box-shadow: var(--shadow-md), 0 0 16px rgba(16, 185, 129, 0.2);
+}
+
+/* Node Custom Checkbox */
+.node-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    appearance: none; /* Override browser inputs */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.node-checkbox:checked {
+    background-color: #10b981;
+    border-color: #10b981;
+}
+
+.node-checkbox:checked::after {
+    content: '✓';
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.node-label {
+    font-size: 0.96rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex-grow: 1;
+}
+
+.node-info-trigger {
+    font-size: 1rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.mindmap-node:hover .node-info-trigger {
+    opacity: 1;
+    transform: scale(1.2);
+    color: var(--accent-primary);
+}
+
+/* ==========================================
+   4. SIDE DETAIL DRAWER PANEL
+   ========================================= */
+.detail-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    z-index: 1050; /* Sits above standard headers */
+    padding: 80px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* Slide transition overlay */
+    transform: translateX(100%);
+    transition: transform var(--transition-slow);
+}
+
+.detail-drawer.open {
+    transform: translateX(0);
+}
+
+.drawer-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+    color: var(--text-primary);
+    transform: rotate(90deg);
+}
+
+.drawer-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    align-self: flex-start;
+    margin-bottom: 12px;
+}
+
+/* Color codes inside the drawer details */
+.drawer-badge.level-beginner { background-color: rgba(16, 185, 129, 0.12); color: #10b981; }
+.drawer-badge.level-intermediate { background-color: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+.drawer-badge.level-advanced { background-color: rgba(99, 102, 241, 0.12); color: #6366f1; }
+
+.drawer-title {
+    font-size: 1.6rem;
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.drawer-section {
+    margin-bottom: 28px;
+}
+
+.drawer-section h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+}
+
+.drawer-section p {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Resources link listing */
+.resources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.resources-list li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.resources-list li a:hover {
+    border-color: var(--accent-primary);
+    background-color: var(--bg-secondary);
+}
+
+/* Add custom icon before link text */
+.resources-list li a::before {
+    content: '🔗';
+    margin-right: 8px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   5. RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================== */
+
+/* Large Tablets Landscape / Portrait (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .mindmap-container {
+        /* Keep grid side-by-side but enable swipe scrollbars */
+        justify-content: flex-start;
+        gap: 40px;
+    }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .mindmap-container {
+        /* Flatten 3 columns grid into single vertical stacking column */
+        flex-direction: column;
+        gap: 40px;
+        overflow-x: hidden; /* Scroll vertical instead */
+        padding: 10px 0;
+    }
+
+    .mindmap-column {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* Hide background vector connections (drawn SVGs look cluttered when stacked) */
+    .mindmap-svg {
+        display: none !important;
+    }
+
+    /* Stack cards simple vertically */
+    .column-nodes {
+        gap: 16px;
+    }
+
+    .mindmap-node {
+        padding: 14px 16px;
+    }
+
+    /* Full-width Details Drawer on Phones */
+    .detail-drawer {
+        width: 100%;
+        padding: 70px 24px 30px;
+    }
+    
+    .progress-tracker-bar {
+        padding: 12px 16px;
+    }
+}

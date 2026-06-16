@@ -1,0 +1,146 @@
+/*
+================================================================
+   TECH ROADMAP - CUSTOM THEME SYSTEM
+================================================================
+   This stylesheet defines the color tokens (CSS Variables)
+   for the three switchable visual profiles:
+   1. Dark Theme (Deep interstellar space layout with glowing highlights)
+   2. Light Yellow Theme (Warm cream background & cozy amber accents)
+   3. Light Green Theme (Fresh mint background & natural emerald accents)
+
+   Themes are applied dynamically by modifying the active class
+   on the <body> tag (.theme-dark, .theme-yellow, .theme-green).
+================================================================
+*/
+
+/* ==========================================
+   1. DARK THEME CONFIGURATION (.theme-dark)
+   ========================================== */
+body.theme-dark {
+    /* Background Colors */
+    --bg-primary: #0b0f19;       /* Deep space navy-black for main page backdrop */
+    --bg-secondary: #161b2b;     /* Slate navy for structural cards, headers, footers */
+    --bg-tertiary: #20273f;      /* Highlighted hover backgrounds / code blocks */
+    
+    /* Text Colors */
+    --text-primary: #f3f4f6;     /* Pure near-white for high-contrast headlines */
+    --text-secondary: #9ca3af;   /* Soft slate grey for readable paragraphs */
+    --text-muted: #6b7280;       /* Darker grey for details and copyright strings */
+    
+    /* Brand Accent Colors */
+    --accent-primary: #6366f1;   /* Indigo base color for key links and action buttons */
+    --accent-secondary: #a855f7; /* Purple for modern gradients and tags */
+    --accent-hover: #4f46e5;     /* Darker indigo on hover states */
+    --accent-glow: rgba(99, 102, 241, 0.4); /* Glowing indigo drop shadow overlay */
+    
+    /* Borders & Outlines */
+    --border-color: rgba(255, 255, 255, 0.08); /* Subtle white border dividers */
+    --border-hover: rgba(99, 102, 241, 0.3);   /* Indigo border on card hover */
+    
+    /* Form Inputs */
+    --input-bg: #111522;         /* Dark background for input boxes */
+    --input-border: rgba(255, 255, 255, 0.1);
+    --input-focus: #6366f1;      /* Indigo focus border */
+    
+    /* Box Shadows & Glows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+    --glow-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+    
+    /* Scrollbars styling variables */
+    --scrollbar-track: #0b0f19;
+    --scrollbar-thumb: #20273f;
+    --scrollbar-thumb-hover: #6366f1;
+
+    /* Theme Tweaks */
+    --particle-opacity: 0.8;     /* Stars glow brightly in dark space */
+}
+
+/* ==========================================
+   2. LIGHT YELLOW THEME CONFIGURATION (.theme-yellow)
+   ========================================== */
+body.theme-yellow {
+    /* Background Colors */
+    --bg-primary: #faf7f2;       /* Warm cream background for cozy studying */
+    --bg-secondary: #ffffff;     /* Pure white for sections and card bodies */
+    --bg-tertiary: #f2ede4;      /* Soft beige for list highlights / input states */
+    
+    /* Text Colors */
+    --text-primary: #2d251e;     /* Charcoal brown for highly readable content */
+    --text-secondary: #61554e;   /* Cozy brown-grey for descriptors */
+    --text-muted: #8c7f76;       /* Soft dust-brown for footers */
+    
+    /* Brand Accent Colors */
+    --accent-primary: #d97706;   /* Amber gold for key actions and buttons */
+    --accent-secondary: #f59e0b; /* Sunny yellow for secondary badges */
+    --accent-hover: #b45309;     /* Darker brown-gold on hovers */
+    --accent-glow: rgba(217, 119, 6, 0.25); /* Golden soft shadow */
+    
+    /* Borders & Outlines */
+    --border-color: rgba(45, 37, 30, 0.08); /* Soft dark-tinted outlines */
+    --border-hover: rgba(217, 119, 6, 0.3);   /* Amber border on card hover */
+    
+    /* Form Inputs */
+    --input-bg: #fdfcfa;         /* Warm white input backgrounds */
+    --input-border: rgba(45, 37, 30, 0.12);
+    --input-focus: #d97706;      /* Amber focus border */
+    
+    /* Box Shadows & Glows */
+    --shadow-sm: 0 2px 8px rgba(45, 37, 30, 0.05);
+    --shadow-md: 0 8px 24px rgba(45, 37, 30, 0.08);
+    --shadow-lg: 0 16px 40px rgba(45, 37, 30, 0.12);
+    --glow-shadow: 0 0 20px rgba(217, 119, 6, 0.1);
+    
+    /* Scrollbars styling variables */
+    --scrollbar-track: #faf7f2;
+    --scrollbar-thumb: #e5ded4;
+    --scrollbar-thumb-hover: #d97706;
+
+    /* Theme Tweaks */
+    --particle-opacity: 0.3;     /* Dim stars slightly so they don't block text readability */
+}
+
+/* ==========================================
+   3. LIGHT GREEN THEME CONFIGURATION (.theme-green)
+   ========================================== */
+body.theme-green {
+    /* Background Colors */
+    --bg-primary: #f4f9f6;       /* Fresh mint-white background */
+    --bg-secondary: #ffffff;     /* Solid white for clean card cards */
+    --bg-tertiary: #e6efea;      /* Soft sage green for menu lists and highlights */
+    
+    /* Text Colors */
+    --text-primary: #1e2d24;     /* Deep forest green for main titles */
+    --text-secondary: #4d6154;   /* Sage green for standard paragraphs */
+    --text-muted: #7a9383;       /* Muted grey-sage for copyright lines */
+    
+    /* Brand Accent Colors */
+    --accent-primary: #10b981;   /* Emerald green base brand color */
+    --accent-secondary: #34d399; /* Mint green for accent badges */
+    --accent-hover: #047857;     /* Deep teal-green on hover clicks */
+    --accent-glow: rgba(16, 185, 129, 0.25); /* Mint glowing shadow overlay */
+    
+    /* Borders & Outlines */
+    --border-color: rgba(30, 45, 36, 0.08); /* Sage-tinted divider outline */
+    --border-hover: rgba(16, 185, 129, 0.3);  /* Emerald border on card hover */
+    
+    /* Form Inputs */
+    --input-bg: #f8fdfb;         /* Lightest mint input boxes */
+    --input-border: rgba(30, 45, 36, 0.12);
+    --input-focus: #10b981;      /* Emerald focus border */
+    
+    /* Box Shadows & Glows */
+    --shadow-sm: 0 2px 8px rgba(30, 45, 36, 0.04);
+    --shadow-md: 0 8px 24px rgba(30, 45, 36, 0.07);
+    --shadow-lg: 0 16px 40px rgba(30, 45, 36, 0.1);
+    --glow-shadow: 0 0 20px rgba(16, 185, 129, 0.08);
+    
+    /* Scrollbars styling variables */
+    --scrollbar-track: #f4f9f6;
+    --scrollbar-thumb: #d7e6de;
+    --scrollbar-thumb-hover: #10b981;
+
+    /* Theme Tweaks */
+    --particle-opacity: 0.35;    /* Dim star opacities to preserve high text contrast */
+}

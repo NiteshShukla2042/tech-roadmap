@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Roadmap - Interactive Learning Path & Mind Maps</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Explore interactive tech roadmaps and mind maps for Web Development, Frontend, Backend, Python, React, and more. Perfect for students, teachers, and beginners.">
+    <meta name="keywords" content="Tech Roadmap, Learning Path, Mind Map, Web Development, Frontend, Backend, Python, React, SQL, Javascript">
+    <meta name="author" content="Tech Roadmap Team">
+
+    <!-- Google Fonts: Outfit (headings) and Inter (body) for modern and sleek typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets connection -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-dark">
+    <!-- Particle Stars Canvas Background (Controlled by js/main.js) -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="nav-container container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button (Hamburger) -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links and Theme Toggler Menu -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="courses.html#roadmaps" class="nav-link">Roadmaps</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+                </ul>
+                
+                <!-- Theme Switcher Dropdown Wrapper -->
+                <div class="theme-switcher-wrapper">
+                    <button class="theme-toggle-btn" id="theme-btn" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+                        <span id="theme-btn-icon">🌓</span>
+                        <span class="theme-btn-text">Theme</span>
+                    </button>
+                    <!-- Theme Dropdown Menu List -->
+                    <ul class="theme-dropdown" id="theme-dropdown" role="menu">
+                        <li role="menuitem">
+                            <button class="theme-opt-btn active" data-theme="dark">
+                                <span class="theme-indicator theme-dark-indicator"></span>Dark Theme
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="theme-opt-btn" data-theme="yellow">
+                                <span class="theme-indicator theme-yellow-indicator"></span>Light Yellow
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="theme-opt-btn" data-theme="green">
+                                <span class="theme-indicator theme-green-indicator"></span>Light Green
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section container">
+            <div class="hero-content">
+                <div class="badge">🚀 Learn Tech Step-by-Step</div>
+                <h1 class="hero-title">Master Technology with Interactive <span class="text-gradient">Roadmaps</span></h1>
+                <p class="hero-description">
+                    Navigate your coding journey with interactive mind maps, clear level-by-level structures, estimated time frames, and handpicked study resources. Ideal for beginners, students, and educators.
+                </p>
+                <div class="hero-actions">
+                    <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                    <a href="#popular-courses" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Interactive Visual Float Element (Simulated course cards using CSS animations) -->
+            <div class="hero-visual">
+                <div class="floating-card c1">
+                    <div class="card-tag html">Beginner</div>
+                    <h3>HTML & CSS</h3>
+                    <p>Foundation of Web Development</p>
+                    <div class="card-progress"><span style="width: 100%"></span></div>
+                </div>
+                <div class="floating-card c2">
+                    <div class="card-tag js">Intermediate</div>
+                    <h3>JavaScript ES6</h3>
+                    <p>Dynamic Interactivity & DOM</p>
+                    <div class="card-progress"><span style="width: 65%"></span></div>
+                </div>
+                <div class="floating-card c3">
+                    <div class="card-tag react">Advanced</div>
+                    <h3>React Framework</h3>
+                    <p>Single Page Apps & Hooks</p>
+                    <div class="card-progress"><span style="width: 30%"></span></div>
+                </div>
+                <div class="visual-glow-glow"></div>
+            </div>
+        </section>
+
+        <!-- Popular Courses Section -->
+        <section class="popular-courses-section container" id="popular-courses">
+            <div class="section-header">
+                <h2 class="section-title">Popular Courses</h2>
+                <p class="section-subtitle">Get started with our most in-demand learning roadmaps designed for career success.</p>
+            </div>
+            
+            <!-- Grid containing popular course cards -->
+            <div class="courses-grid">
+                <!-- Course 1: Web Development -->
+                <div class="course-card">
+                    <div class="course-card-badge level-beginner">Beginner</div>
+                    <div class="course-icon">🌐</div>
+                    <h3 class="course-title">Web Development</h3>
+                    <p class="course-desc">The complete package to learn HTML, CSS, and basic JavaScript. Start your web career here.</p>
+                    <a href="pages/web-development.html" class="btn btn-card">Open Roadmap</a>
+                </div>
+
+                <!-- Course 2: Frontend Development -->
+                <div class="course-card">
+                    <div class="course-card-badge level-intermediate">Intermediate</div>
+                    <div class="course-icon">🎨</div>
+                    <h3 class="course-title">Frontend Development</h3>
+                    <p class="course-desc">Master modern responsive designs, styling frameworks, Git versioning, and RESTful APIs.</p>
+                    <a href="pages/frontend.html" class="btn btn-card">Open Roadmap</a>
+                </div>
+
+                <!-- Course 3: Backend Development -->
+                <div class="course-card">
+                    <div class="course-card-badge level-advanced">Advanced</div>
+                    <div class="course-icon">⚙️</div>
+                    <h3 class="course-title">Backend Development</h3>
+                    <p class="course-desc">Learn database structures, building robust server logic, authentication APIs, and deployment pipelines.</p>
+                    <a href="pages/backend.html" class="btn btn-card">Open Roadmap</a>
+                </div>
+
+                <!-- Course 4: Full Stack Development -->
+                <div class="course-card">
+                    <div class="course-card-badge level-advanced">Advanced</div>
+                    <div class="course-icon">💻</div>
+                    <h3 class="course-title">Full Stack Development</h3>
+                    <p class="course-desc">Combine frontend designs and backend architectures to build complete, functional web apps from scratch.</p>
+                    <a href="pages/fullstack.html" class="btn btn-card">Open Roadmap</a>
+                </div>
+            </div>
+
+            <!-- Footer link to see other courses -->
+            <div class="section-footer">
+                <a href="courses.html" class="btn btn-outline">View All 10 Courses</a>
+            </div>
+        </section>
+
+        <!-- Learning Paths Showcase Section -->
+        <section class="learning-paths-section container">
+            <div class="section-header">
+                <h2 class="section-title">Structured Learning Paths</h2>
+                <p class="section-subtitle">A clear breakdown of your path from an absolute beginner to a professional coder.</p>
+            </div>
+
+            <!-- Steps showing transition from Beginner to Advanced -->
+            <div class="paths-flow">
+                <div class="path-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Beginner Level</h3>
+                        <p>Focus on fundamentals: syntax, basic logic, static markup, and simple scripting.</p>
+                        <span class="path-duration">⏱️ ~4-6 Weeks</span>
+                    </div>
+                </div>
+                <div class="path-line"></div>
+                <div class="path-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Intermediate Level</h3>
+                        <p>Learn version control (Git), using responsive designs, and consuming data through APIs.</p>
+                        <span class="path-duration">⏱️ ~8-12 Weeks</span>
+                    </div>
+                </div>
+                <div class="path-line"></div>
+                <div class="path-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Advanced Level</h3>
+                        <p>Dive deep into frameworks, performance optimization patterns, security, and cloud deployment.</p>
+                        <span class="path-duration">⏱️ ~12+ Weeks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Features Grid -->
+        <section class="why-choose-us container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Tech Roadmap</h2>
+                <p class="section-subtitle">We build tools that simplify learning and structuring course modules.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Interactive Mind Maps</h3>
+                    <p>Zoom, expand, and collapse interactive tree nodes to visually track subject dependencies.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⏳</div>
+                    <h3>Estimated Timeframes</h3>
+                    <p>Know exactly how long each topic will take so you can budget your time and set clear goals.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📚</div>
+                    <h3>Curated Study Resources</h3>
+                    <p>Skip the search: every single roadmap topic links to top-tier free courses and documentations.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Theme Customization</h3>
+                    <p>Pick between three gorgeous visual styles: Dark, Light Yellow, or Light Green for optimal study comfort.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student & Teacher Benefits Section -->
+        <section class="benefits-section container">
+            <div class="benefits-grid">
+                <!-- Students Benefits -->
+                <div class="benefit-card student-benefits">
+                    <div class="benefit-icon">🎒</div>
+                    <h2>Benefits for Students</h2>
+                    <ul class="benefit-list">
+                        <li><strong>No More Tutorial Hell:</strong> Know exactly what to learn next without getting stuck in random tutorials.</li>
+                        <li><strong>Clear Skill Levels:</strong> Follow steps laid out from absolute beginner to production deployment.</li>
+                        <li><strong>Visual Tracking:</strong> Use visual charts and structures to conceptualize connections between concepts.</li>
+                        <li><strong>Free Resources:</strong> Instant links to high-quality free documents and video playlists.</li>
+                    </ul>
+                </div>
+
+                <!-- Teachers Benefits -->
+                <div class="benefit-card teacher-benefits">
+                    <div class="benefit-icon">🧑‍🏫</div>
+                    <h2>Benefits for Teachers</h2>
+                    <ul class="benefit-list">
+                        <li><strong>Curriculum Design:</strong> Use our structured trees as a solid blueprint for designing classes.</li>
+                        <li><strong>Pre-built Syllabus:</strong> Direct students to the roadmaps as a self-study reference alongside lectures.</li>
+                        <li><strong>Time Management:</strong> Utilize estimated time markers to plan weekly assignments and milestones.</li>
+                        <li><strong>Standardized Learning:</strong> Ensure all beginners learn industry-standard skills and tools in proper order.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Brand Info Column -->
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+                </a>
+                <p class="footer-tagline">Visualizing paths to career success in technology.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="GitHub">🐙</a>
+                    <a href="#" aria-label="LinkedIn">🔗</a>
+                </div>
+            </div>
+            
+            <!-- Quick Platform Links -->
+            <div class="footer-links">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="courses.html">All Courses</a></li>
+                    <li><a href="courses.html#roadmaps">Interactive Roadmaps</a></li>
+                    <li><a href="feedback.html">Share Feedback</a></li>
+                </ul>
+            </div>
+
+            <!-- About Information Links -->
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="about.html#team">The Team</a></li>
+                    <li><a href="about.html#goals">Future Goals</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Theme Swapping buttons -->
+            <div class="footer-links">
+                <h3>Themes</h3>
+                <ul>
+                    <li><button class="footer-theme-link" data-theme-footer="dark">Dark Theme</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="yellow">Light Yellow</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="green">Light Green</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottom Credits -->
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Tech Roadmap. All rights reserved. Built for students, educators, and beginners.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Connection -->
+    <!-- theme.js is loaded first to apply body styling class immediately and prevent visual theme flash -->
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

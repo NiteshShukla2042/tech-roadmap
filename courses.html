@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Roadmap - Courses Library</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Browse our collection of 10 comprehensive learning roadmaps. Filter by skill levels: Web Development, Frontend, Backend, Python, React, SQL, and Data Analysis.">
+    <meta name="keywords" content="Learning Paths, Interactive Roadmap, Web Dev, Programming, Frontend, Backend, React, Python, Data Analytics">
+    <meta name="author" content="Tech Roadmap Team">
+
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets connection -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Simple in-page styling for the category filtering bar -->
+    <style>
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            border-radius: 50px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .filter-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent-primary);
+            color: #ffffff !important;
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        /* Smoothly hide filtered out cards */
+        .course-card.hide {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="theme-dark">
+    <!-- Particle Stars Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button (Hamburger) -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="courses.html" class="nav-link active">Courses</a></li>
+                    <li><a href="#roadmaps" class="nav-link">Roadmaps</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+                </ul>
+                
+                <!-- Theme Switcher Control -->
+                <div class="theme-switcher-wrapper">
+                    <button class="theme-toggle-btn" id="theme-btn" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+                        <span id="theme-btn-icon">🌓</span>
+                        <span class="theme-btn-text">Theme</span>
+                    </button>
+                    <!-- Theme Dropdown Menu -->
+                    <ul class="theme-dropdown" id="theme-dropdown" role="menu">
+                        <li role="menuitem"><button class="theme-opt-btn active" data-theme="dark"><span class="theme-indicator theme-dark-indicator"></span>Dark Theme</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="yellow"><span class="theme-indicator theme-yellow-indicator"></span>Light Yellow</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="green"><span class="theme-indicator theme-green-indicator"></span>Light Green</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 60px;">
+        <!-- Page Header -->
+        <div class="section-header" id="roadmaps">
+            <div class="badge">📚 Curated Syllabus</div>
+            <h1 class="section-title" style="font-size: 2.8rem; font-family: 'Outfit', sans-serif;">Explore Technology Roadmaps</h1>
+            <p class="section-subtitle">Select your target technology stack below. Each card links to a structured, interactive mind map mapping out Beginner, Intermediate, and Advanced milestones.</p>
+        </div>
+
+        <!-- Level Filtering Controls -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Roadmaps</button>
+            <button class="filter-btn" data-filter="beginner">Beginner Levels</button>
+            <button class="filter-btn" data-filter="intermediate">Intermediate Levels</button>
+            <button class="filter-btn" data-filter="advanced">Advanced Levels</button>
+        </div>
+
+        <!-- Course Cards Grid Section -->
+        <div class="courses-grid" style="margin-bottom: 80px;">
+            <!-- 1. Web Development -->
+            <div class="course-card" data-level="beginner">
+                <div class="course-card-badge level-beginner">Beginner</div>
+                <div class="course-icon">🌐</div>
+                <h3 class="course-title">Web Development</h3>
+                <p class="course-desc">Start your web journey. Master HTML layout elements, CSS style frameworks, and responsive layouts.</p>
+                <a href="pages/web-development.html" class="btn btn-card" data-course-id="web-development">Open Roadmap</a>
+            </div>
+
+            <!-- 2. Frontend Development -->
+            <div class="course-card" data-level="intermediate">
+                <div class="course-card-badge level-intermediate">Intermediate</div>
+                <div class="course-icon">🎨</div>
+                <h3 class="course-title">Frontend Development</h3>
+                <p class="course-desc">Master advanced interface design: dynamic document manipulation, CSS tooling, Git, and REST APIs.</p>
+                <a href="pages/frontend.html" class="btn btn-card" data-course-id="frontend">Open Roadmap</a>
+            </div>
+
+            <!-- 3. Backend Development -->
+            <div class="course-card" data-level="advanced">
+                <div class="course-card-badge level-advanced">Advanced</div>
+                <div class="course-icon">⚙️</div>
+                <h3 class="course-title">Backend Development</h3>
+                <p class="course-desc">Control application servers, database schemas, API routing logic, user authentication, and deployment.</p>
+                <a href="pages/backend.html" class="btn btn-card" data-course-id="backend">Open Roadmap</a>
+            </div>
+
+            <!-- 4. Full Stack Development -->
+            <div class="course-card" data-level="advanced">
+                <div class="course-card-badge level-advanced">Advanced</div>
+                <div class="course-icon">💻</div>
+                <h3 class="course-title">Full Stack Development</h3>
+                <p class="course-desc">Learn both ends. Bridge responsive frontend interfaces with server architectures and database clusters.</p>
+                <a href="pages/fullstack.html" class="btn btn-card" data-course-id="fullstack">Open Roadmap</a>
+            </div>
+
+            <!-- 5. JavaScript -->
+            <div class="course-card" data-level="beginner">
+                <div class="course-card-badge level-beginner">Beginner</div>
+                <div class="course-icon">🟨</div>
+                <h3 class="course-title">JavaScript</h3>
+                <p class="course-desc">Master the scripting language of the web. Cover fundamental structures, functions, DOM elements, and ES6+ features.</p>
+                <a href="pages/javascript.html" class="btn btn-card" data-course-id="javascript">Open Roadmap</a>
+            </div>
+
+            <!-- 6. React -->
+            <div class="course-card" data-level="intermediate">
+                <div class="course-card-badge level-intermediate">Intermediate</div>
+                <div class="course-icon">⚛️</div>
+                <h3 class="course-title">React</h3>
+                <p class="course-desc">Build component-based interfaces. Learn dynamic hooks, router linkages, context API states, and SPA patterns.</p>
+                <a href="pages/react.html" class="btn btn-card" data-course-id="react">Open Roadmap</a>
+            </div>
+
+            <!-- 7. Node.js -->
+            <div class="course-card" data-level="intermediate">
+                <div class="course-card-badge level-intermediate">Intermediate</div>
+                <div class="course-icon">🟢</div>
+                <h3 class="course-title">Node.js</h3>
+                <p class="course-desc">Build backend runtimes. Learn event cycles, server-side APIs, files systems, and package architectures.</p>
+                <a href="pages/nodejs.html" class="btn btn-card" data-course-id="nodejs">Open Roadmap</a>
+            </div>
+
+            <!-- 8. Python -->
+            <div class="course-card" data-level="beginner">
+                <div class="course-card-badge level-beginner">Beginner</div>
+                <div class="course-icon">🐍</div>
+                <h3 class="course-title">Python</h3>
+                <p class="course-desc">Start coding with a clean, readable syntax. Learn data structures, scripting pipelines, and OOP classes.</p>
+                <a href="pages/python.html" class="btn btn-card" data-course-id="python">Open Roadmap</a>
+            </div>
+
+            <!-- 9. Data Analysis -->
+            <div class="course-card" data-level="intermediate">
+                <div class="course-card-badge level-intermediate">Intermediate</div>
+                <div class="course-icon">📊</div>
+                <h3 class="course-title">Data Analysis</h3>
+                <p class="course-desc">Read and process data. Learn cleaning steps, visualization techniques, statistics, and SQL queries.</p>
+                <a href="pages/data-analysis.html" class="btn btn-card" data-course-id="data-analysis">Open Roadmap</a>
+            </div>
+
+            <!-- 10. SQL -->
+            <div class="course-card" data-level="beginner">
+                <div class="course-card-badge level-beginner">Beginner</div>
+                <div class="course-icon">🗄️</div>
+                <h3 class="course-title">SQL</h3>
+                <p class="course-desc">Communicate with database servers. Master relational schemas, table joins, index filters, and aggregation.</p>
+                <a href="pages/sql.html" class="btn btn-card" data-course-id="sql">Open Roadmap</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+                </a>
+                <p class="footer-tagline">Visualizing paths to career success in technology.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="GitHub">🐙</a>
+                    <a href="#" aria-label="LinkedIn">🔗</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="courses.html">All Courses</a></li>
+                    <li><a href="courses.html#roadmaps">Interactive Roadmaps</a></li>
+                    <li><a href="feedback.html">Share Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="about.html#team">The Team</a></li>
+                    <li><a href="about.html#goals">Future Goals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Themes</h3>
+                <ul>
+                    <li><button class="footer-theme-link" data-theme-footer="dark">Dark Theme</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="yellow">Light Yellow</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="green">Light Green</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Tech Roadmap. All rights reserved. Built for students, educators, and beginners.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Connection -->
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Dynamic Level Filtering Script & Last Visited Course Storage -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ==========================================
+            // 1. DYNAMIC LEVEL FILTERING
+            // ==========================================
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const courseCards = document.querySelectorAll('.course-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button state
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Filter cards
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+                    courseCards.forEach(card => {
+                        const cardLevel = card.getAttribute('data-level');
+                        if (filterValue === 'all' || cardLevel === filterValue) {
+                            card.classList.remove('hide');
+                        } else {
+                            card.classList.add('hide');
+                        }
+                    });
+                });
+            });
+
+            // ==========================================
+            // 2. SAVE LAST VISITED COURSE IN LOCALSTORAGE
+            // ==========================================
+            const courseButtons = document.querySelectorAll('.btn-card');
+            
+            courseButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const courseId = this.getAttribute('data-course-id');
+                    const courseName = this.closest('.course-card').querySelector('.course-title').textContent;
+                    
+                    const visitedData = {
+                        id: courseId,
+                        name: courseName,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    // Save to local storage
+                    localStorage.setItem('tech-roadmap-last-visited', JSON.stringify(visitedData));
+                });
+            });
+        });
+    </script>
+</body>
+</html>

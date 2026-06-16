@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Development Roadmap - Interactive Mind Map</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Master Full Stack Development. Follow our structured, interactive mind map detailing Beginner, Intermediate, and Advanced milestones with curated resources.">
+    <meta name="keywords" content="Full Stack Development, HTML, CSS, JavaScript, React, Node.js, Express, databases, JWT, Docker, AWS, Testing">
+    <meta name="author" content="Tech Roadmap Team">
+
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets connection -->
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/roadmap.css">
+</head>
+<body class="theme-dark">
+    <!-- Particle Stars Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="../courses.html#roadmaps" class="nav-link active">Roadmaps</a></li>
+                    <li><a href="../about.html" class="nav-link">About</a></li>
+                    <li><a href="../feedback.html" class="nav-link">Feedback</a></li>
+                </ul>
+                
+                <!-- Theme Switcher Control -->
+                <div class="theme-switcher-wrapper">
+                    <button class="theme-toggle-btn" id="theme-btn" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+                        <span id="theme-btn-icon">🌓</span>
+                        <span class="theme-btn-text">Theme</span>
+                    </button>
+                    <!-- Theme Dropdown Menu -->
+                    <ul class="theme-dropdown" id="theme-dropdown" role="menu">
+                        <li role="menuitem"><button class="theme-opt-btn active" data-theme="dark"><span class="theme-indicator theme-dark-indicator"></span>Dark Theme</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="yellow"><span class="theme-indicator theme-yellow-indicator"></span>Light Yellow</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="green"><span class="theme-indicator theme-green-indicator"></span>Light Green</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container" style="margin-top: 24px;">
+        <nav class="breadcrumbs" aria-label="Breadcrumb" style="font-size: 0.9rem; color: var(--text-secondary); display: flex; gap: 8px;">
+            <a href="../index.html">Home</a> <span>/</span>
+            <a href="../courses.html">Courses</a> <span>/</span>
+            <span style="color: var(--text-primary); font-weight: 500;">Full Stack Development</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container" style="margin-top: 30px; margin-bottom: 80px; position: relative;">
+        
+        <!-- Hero Section -->
+        <section class="roadmap-hero" style="margin-bottom: 40px;">
+            <div class="badge">💻 Complete Applications</div>
+            <h1 style="font-size: 2.8rem; margin-bottom: 16px; font-family: 'Outfit', sans-serif;">Full Stack Development Roadmap</h1>
+            <p style="color: var(--text-secondary); max-width: 750px; font-size: 1.1rem; margin-bottom: 24px;">
+                Master both frontend engineering and backend architecture. Connect user interfaces with database servers, construct secure APIs, deploy containers, and orchestrate cloud apps.
+            </p>
+            
+            <!-- Metadata Cards -->
+            <div class="roadmap-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="background-color: var(--bg-secondary); padding: 20px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md);">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">DIFFICULTY</span>
+                    <strong style="color: #6366f1; font-size: 1.15rem;">Advanced</strong>
+                </div>
+                <div style="background-color: var(--bg-secondary); padding: 20px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md);">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">ESTIMATED TIME</span>
+                    <strong style="color: var(--accent-primary); font-size: 1.15rem;">⏱️ ~450 Hours</strong>
+                </div>
+                <div style="background-color: var(--bg-secondary); padding: 20px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md);">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">TOPICS COUNT</span>
+                    <strong style="font-size: 1.15rem;">11 Core Subjects</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Progress Tracker Card -->
+        <section class="progress-tracker-bar" style="position: sticky; top: var(--header-height); z-index: 100; background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 16px 24px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); margin-bottom: 50px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; transition: background-color var(--transition-normal);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 1.5rem;">📈</span>
+                <div>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 2px;">Your Learning Progress</h3>
+                    <span id="progress-text" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">0 of 11 Topics Completed (0%)</span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px; flex-grow: 1; max-width: 400px; justify-content: flex-end;">
+                <div style="width: 100%; height: 10px; background-color: var(--bg-tertiary); border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color);">
+                    <div id="progress-bar-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); border-radius: 10px; transition: width 0.4s ease-out;"></div>
+                </div>
+                <span id="progress-percentage-badge" style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: 700; color: var(--accent-primary);">0%</span>
+            </div>
+        </section>
+
+        <!-- Mind Map Section -->
+        <section class="mindmap-section" style="margin-bottom: 60px;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">Interactive Mind Map Workspace</h2>
+            <div class="mindmap-container">
+                <svg class="mindmap-svg" id="mindmap-svg"></svg>
+                
+                <!-- 1. Beginner Column -->
+                <div class="mindmap-column" id="col-beginner">
+                    <div class="column-header level-beginner">Beginner Level</div>
+                    <div class="column-nodes">
+                        <div class="mindmap-node" data-topic="webbasics">
+                            <input type="checkbox" class="node-checkbox" id="chk-webbasics" data-topic-id="webbasics" aria-label="Mark Web Basics Completed">
+                            <span class="node-label">Web Basics (HTML/CSS)</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <div class="mindmap-node" data-topic="jscore">
+                            <input type="checkbox" class="node-checkbox" id="chk-jscore" data-topic-id="jscore" aria-label="Mark Javascript Core Completed">
+                            <span class="node-label">JavaScript Core</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <div class="mindmap-node" data-topic="git">
+                            <input type="checkbox" class="node-checkbox" id="chk-git" data-topic-id="git" aria-label="Mark Git Completed">
+                            <span class="node-label">Git Version Control</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Intermediate Column -->
+                <div class="mindmap-column" id="col-intermediate">
+                    <div class="column-header level-intermediate">Intermediate Level</div>
+                    <div class="column-nodes">
+                        <div class="mindmap-node" data-topic="frontend">
+                            <input type="checkbox" class="node-checkbox" id="chk-frontend" data-topic-id="frontend" aria-label="Mark Frontend Completed">
+                            <span class="node-label">Frontend (React)</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <div class="mindmap-node" data-topic="backend">
+                            <input type="checkbox" class="node-checkbox" id="chk-backend" data-topic-id="backend" aria-label="Mark Backend Completed">
+                            <span class="node-label">Backend (Node/Express)</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <div class="mindmap-node" data-topic="database">
+                            <input type="checkbox" class="node-checkbox" id="chk-database" data-topic-id="database" aria-label="Mark Database Completed">
+                            <span class="node-label">SQL & NoSQL Databases</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Advanced Column -->
+                <div class="mindmap-column" id="col-advanced">
+                    <div class="column-header level-advanced">Advanced Level</div>
+                    <div class="column-nodes">
+                        <div class="mindmap-node" data-topic="auth">
+                            <input type="checkbox" class="node-checkbox" id="chk-auth" data-topic-id="auth" aria-label="Mark Authentication Completed">
+                            <span class="node-label">Authentication (JWT)</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <div class="mindmap-node" data-topic="cicd">
+                            <input type="checkbox" class="node-checkbox" id="chk-cicd" data-topic-id="cicd" aria-label="Mark CI/CD Completed">
+                            <span class="node-label">Testing & CI/CD</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <div class="mindmap-node" data-topic="docker">
+                            <input type="checkbox" class="node-checkbox" id="chk-docker" data-topic-id="docker" aria-label="Mark Docker Completed">
+                            <span class="node-label">Docker Containers</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <div class="mindmap-node" data-topic="cloud">
+                            <input type="checkbox" class="node-checkbox" id="chk-cloud" data-topic-id="cloud" aria-label="Mark Cloud Platforms Completed">
+                            <span class="node-label">AWS & Cloud Hosting</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <div class="mindmap-node" data-topic="perf">
+                            <input type="checkbox" class="node-checkbox" id="chk-perf" data-topic-id="perf" aria-label="Mark Performance Completed">
+                            <span class="node-label">Caching & Optimization</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Side Drawer Panel -->
+        <aside class="detail-drawer" id="detail-drawer" aria-hidden="true" role="dialog" aria-labelledby="drawer-title">
+            <button class="drawer-close-btn" id="drawer-close" aria-label="Close details panel">✕</button>
+            <div class="drawer-content">
+                <span class="drawer-badge" id="drawer-level-badge">Beginner</span>
+                <h2 class="drawer-title" id="drawer-title">Topic Details</h2>
+                
+                <div class="drawer-meta-info" style="display: flex; gap: 16px; margin: 16px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">LEARNING ORDER</span>
+                        <strong id="drawer-order">#1</strong>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">ESTIMATED TIME</span>
+                        <strong id="drawer-time">⏱️ 15 Hours</strong>
+                    </div>
+                </div>
+
+                <div class="drawer-section">
+                    <h3>Description</h3>
+                    <p id="drawer-desc">Select a topic node from the mind map to view details.</p>
+                </div>
+
+                <div class="drawer-section">
+                    <h3>Recommended Resources</h3>
+                    <ul class="resources-list" id="drawer-resources">
+                        <!-- Links appended dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Fallback navigation buttons -->
+        <div style="display: flex; gap: 16px; margin-top: 40px; justify-content: center;">
+            <a href="../courses.html" class="btn btn-secondary">← Back to Courses</a>
+            <a href="../index.html" class="btn btn-secondary">Go to Home</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+                </a>
+                <p class="footer-tagline">Visualizing paths to career success in technology.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="GitHub">🐙</a>
+                    <a href="#" aria-label="LinkedIn">🔗</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="../courses.html">All Courses</a></li>
+                    <li><a href="../courses.html#roadmaps">Interactive Roadmaps</a></li>
+                    <li><a href="../feedback.html">Share Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="../about.html">Our Mission</a></li>
+                    <li><a href="../about.html#team">The Team</a></li>
+                    <li><a href="../about.html#goals">Future Goals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Themes</h3>
+                <ul>
+                    <li><button class="footer-theme-link" data-theme-footer="dark">Dark Theme</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="yellow">Light Yellow</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="green">Light Green</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Tech Roadmap. All rights reserved. Built for students, educators, and beginners.</p>
+        </div>
+    </footer>
+
+    <!-- Topic Details JSON Store -->
+    <script id="roadmap-data" type="application/json">
+    {
+        "webbasics": {
+            "title": "Web Basics (HTML/CSS)",
+            "level": "Beginner",
+            "order": 1,
+            "time": "30 Hours",
+            "desc": "Build static web templates. Master HTML markup structuring, CSS style decorations, flexbox models, CSS layouts, and page responsivity.",
+            "resources": [
+                {"name": "MDN Web Fundamentals", "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web"}
+            ]
+        },
+        "jscore": {
+            "title": "JavaScript Core",
+            "level": "Beginner",
+            "order": 2,
+            "time": "45 Hours",
+            "desc": "Master programming fundamentals: variables, arrays, loop logic, functions, document tree selector models (DOM), and ES6 modules.",
+            "resources": [
+                {"name": "Eloquent JavaScript", "url": "https://eloquentjavascript.net/"}
+            ]
+        },
+        "git": {
+            "title": "Git Version Control",
+            "level": "Beginner",
+            "order": 3,
+            "time": "12 Hours",
+            "desc": "Learn key developer versioning. Cover Git commits, branch management, merge conflict resolution, and pushing codebases to GitHub.",
+            "resources": [
+                {"name": "Atlassian Git Guides", "url": "https://www.atlassian.com/git/tutorials"}
+            ]
+        },
+        "frontend": {
+            "title": "Frontend (React)",
+            "level": "Intermediate",
+            "order": 4,
+            "time": "50 Hours",
+            "desc": "Build dynamic user views using React. Study components, state hooks, react routers, and API connection hooks.",
+            "resources": [
+                {"name": "React Dev Official", "url": "https://react.dev/"}
+            ]
+        },
+        "backend": {
+            "title": "Backend (Node/Express)",
+            "level": "Intermediate",
+            "order": 5,
+            "time": "45 Hours",
+            "desc": "Set up server application servers using Node.js and the Express framework. Implement REST APIs and middleware validation routes.",
+            "resources": [
+                {"name": "Express Guide", "url": "https://expressjs.com/"}
+            ]
+        },
+        "database": {
+            "title": "SQL & NoSQL Databases",
+            "level": "Intermediate",
+            "order": 6,
+            "time": "35 Hours",
+            "desc": "Persist web client information. Study table schema design using relational SQL systems (PostgreSQL) and NoSQL databases (MongoDB).",
+            "resources": [
+                {"name": "SQL vs NoSQL (MongoDB Docs)", "url": "https://www.mongodb.com/nosql-explained/nosql-vs-sql"}
+            ]
+        },
+        "auth": {
+            "title": "Authentication (JWT)",
+            "level": "Advanced",
+            "order": 7,
+            "time": "25 Hours",
+            "desc": "Validate user permissions using cryptographically secure tokens. Build authentication routes using JSON Web Tokens (JWT) and secure cookie variables.",
+            "resources": [
+                {"name": "OWASP Authentication Guide", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"}
+            ]
+        },
+        "cicd": {
+            "title": "Testing & CI/CD",
+            "level": "Advanced",
+            "order": 8,
+            "time": "30 Hours",
+            "desc": "Automate deployment tests. Implement backend integration tests (Jest/Supertest) and frontend testing tools alongside CI/CD workflows.",
+            "resources": [
+                {"name": "Intro to CI/CD (GitHub Actions)", "url": "https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions"}
+            ]
+        },
+        "docker": {
+            "title": "Docker Containers",
+            "level": "Advanced",
+            "order": 9,
+            "time": "20 Hours",
+            "desc": "Orchestrate local running dependencies. Write Dockerfiles to package server logic and database instances inside self-contained virtualization frames.",
+            "resources": [
+                {"name": "Docker Container Tutorial", "url": "https://docs.docker.com/get-started/"}
+            ]
+        },
+        "cloud": {
+            "title": "AWS & Cloud Hosting",
+            "level": "Advanced",
+            "order": 10,
+            "time": "35 Hours",
+            "desc": "Deploy complete builds to global cloud platforms. Cover Amazon Web Services (AWS EC2/S3), static hosting sites, and server deployments.",
+            "resources": [
+                {"name": "AWS Getting Started Guide", "url": "https://aws.amazon.com/getting-started/"}
+            ]
+        },
+        "perf": {
+            "title": "Caching & Optimization",
+            "level": "Advanced",
+            "order": 11,
+            "time": "20 Hours",
+            "desc": "Improve page load speeds. Implement cache nodes (Redis), compress transfer bundles, configure browser caches, and optimize database indices.",
+            "resources": [
+                {"name": "Web Performance Guides (MDN)", "url": "https://developer.mozilla.org/en-US/docs/Web/Performance"}
+            ]
+        }
+    }
+    </script>
+
+    <!-- Scripts Connection -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/roadmap.js"></script>
+</body>
+</html>

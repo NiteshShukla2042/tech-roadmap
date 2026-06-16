@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Roadmap - Our Mission & Vision</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Learn about Tech Roadmap's mission to simplify technology learning. Explore how we help students build careers and assist teachers in curriculum prep.">
+    <meta name="keywords" content="About Us, Tech Roadmap, Tech Education, Learning Paths, Student Guidance, Teacher Syllabus">
+    <meta name="author" content="Tech Roadmap Team">
+
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets connection -->
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-dark">
+    <!-- Particle Stars Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button (Hamburger) -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="courses.html#roadmaps" class="nav-link">Roadmaps</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+                </ul>
+                
+                <!-- Theme Switcher Control -->
+                <div class="theme-switcher-wrapper">
+                    <button class="theme-toggle-btn" id="theme-btn" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+                        <span id="theme-btn-icon">🌓</span>
+                        <span class="theme-btn-text">Theme</span>
+                    </button>
+                    <!-- Theme Dropdown Menu -->
+                    <ul class="theme-dropdown" id="theme-dropdown" role="menu">
+                        <li role="menuitem"><button class="theme-opt-btn active" data-theme="dark"><span class="theme-indicator theme-dark-indicator"></span>Dark Theme</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="yellow"><span class="theme-indicator theme-yellow-indicator"></span>Light Yellow</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="green"><span class="theme-indicator theme-green-indicator"></span>Light Green</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section container" style="min-height: auto; padding: 80px 24px 40px;">
+            <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center; align-items: center;">
+                <div class="badge">✨ OUR MISSION</div>
+                <h1 class="hero-title">Democratizing Tech Education through <span class="text-gradient">Structured Paths</span></h1>
+                <p class="hero-description" style="margin-left: auto; margin-right: auto;">
+                    We believe learning technology shouldn't feel like navigating a maze. Tech Roadmap provides clear, visual, and interactive step-by-step guides to help you transition from absolute beginner to industry professional.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section class="container" style="padding: 40px 24px 60px;">
+            <div class="benefits-grid" style="grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;">
+                <!-- Why this platform exists -->
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">Why Tech Roadmap Exists</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 1.05rem;">
+                        The internet is full of tutorials, courses, and documentations. However, for most beginners, the primary challenge isn't a lack of resources—it's **information overload**. 
+                    </p>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 1.05rem;">
+                        Without structure, self-learners fall into "tutorial hell"—watching video playlists repeatedly without knowing how to connect concepts or what to build next.
+                    </p>
+                    <p style="color: var(--text-secondary); font-size: 1.05rem;">
+                        Tech Roadmap bridges this gap. By organizing subjects into levels (Beginner, Intermediate, Advanced) and connecting them in interactive mind maps, we help you understand the big picture and take control of your learning.
+                    </p>
+                </div>
+                <!-- How it helps students graphic block -->
+                <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 40px; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md);">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">How We Help You</h3>
+                    <ul class="benefit-list" style="gap: 20px;">
+                        <li><strong>Structure:</strong> Follow step-by-step tracks, knowing exactly what to study next.</li>
+                        <li><strong>Interactivity:</strong> Click node details to get handpicked documentation links immediately.</li>
+                        <li><strong>Progress:</strong> Check off completed tasks to visualize your learning progress.</li>
+                        <li><strong>Save Time:</strong> Skip the research phase and focus on writing code.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audience Benefits Section -->
+        <section class="benefits-section container" style="padding-top: 40px;">
+            <div class="section-header">
+                <h2 class="section-title">Designed for Students & Teachers</h2>
+                <p class="section-subtitle">Whether you are teaching yourself to code or designing a course syllabus, we have you covered.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <!-- For Students -->
+                <div class="benefit-card student-benefits">
+                    <div class="benefit-icon">🎓</div>
+                    <h2>Benefits for Students</h2>
+                    <ul class="benefit-list">
+                        <li><strong>Structured Learning:</strong> No more guesswork. Follow clear, level-by-level milestones.</li>
+                        <li><strong>Career Alignment:</strong> Study the exact toolchains demanded by recruiters for frontend, backend, or full-stack roles.</li>
+                        <li><strong>Time Management:</strong> Utilize estimated study times to plan your weekly goals.</li>
+                        <li><strong>Curated Quality:</strong> Skip bad tutorials. Access only high-quality, verified reference documentations.</li>
+                    </ul>
+                </div>
+
+                <!-- For Teachers -->
+                <div class="benefit-card teacher-benefits">
+                    <div class="benefit-icon">🏫</div>
+                    <h2>Benefits for Teachers</h2>
+                    <ul class="benefit-list">
+                        <li><strong>Teaching Assistance:</strong> Use our mind maps as interactive visual aids during lectures.</li>
+                        <li><strong>Syllabus Blueprint:</strong> Adopt our structured levels to build course timelines and assign milestones.</li>
+                        <li><strong>Resource Sharing:</strong> Direct students to the roadmaps for homework prep and supplementary reading.</li>
+                        <li><strong>Industry Alignment:</strong> Teach standard, modern technologies and workflows.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Goals Section -->
+        <section class="container" style="padding: 60px 24px 80px;">
+            <div class="section-header">
+                <h2 class="section-title">Our Future Goals</h2>
+                <p class="section-subtitle">We are constantly working to expand the platform and build better tools for learners.</p>
+            </div>
+
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;">
+                <!-- Goal 1 -->
+                <div class="feature-box">
+                    <div class="feature-icon">📚</div>
+                    <h3>More Tech Tracks</h3>
+                    <p>Expanding our roadmaps to cover Mobile App development, DevOps pipelines, Machine Learning, and Cyber Security.</p>
+                </div>
+                <!-- Goal 2 -->
+                <div class="feature-box">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Career Guidance</h3>
+                    <p>Integrating AI assistants to analyze your progress, recommend resources, and design custom study paths.</p>
+                </div>
+                <!-- Goal 3 -->
+                <div class="feature-box">
+                    <div class="feature-icon">🥇</div>
+                    <h3>Certification System</h3>
+                    <p>Allowing users to complete challenges, test their skills, and earn badges to display on their resumes.</p>
+                </div>
+                <!-- Goal 4 -->
+                <div class="feature-box">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community Hub</h3>
+                    <p>Building forums and study rooms where self-learners can collaborate, share code, and get feedback.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team / Creator Section -->
+        <section class="container" style="padding-bottom: 80px;">
+            <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 50px; text-align: center; box-shadow: var(--shadow-lg); position: relative; overflow: hidden;">
+                <div class="badge">👥 THE VISION</div>
+                <h2 style="font-size: 2.2rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">Our Commitment to Open Education</h2>
+                <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 30px; font-size: 1.05rem; line-height: 1.7;">
+                    Tech Roadmap is built by developers, for developers. We are committed to keeping this platform **100% free and open-source**. We believe that high-quality career guidance shouldn't be hidden behind paywalls.
+                </p>
+                <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto; font-size: 1.05rem; font-style: italic;">
+                    "Empowering the next generation of engineers, one structured node at a time."
+                </p>
+                <div class="visual-glow-glow" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+                </a>
+                <p class="footer-tagline">Visualizing paths to career success in technology.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="GitHub">🐙</a>
+                    <a href="#" aria-label="LinkedIn">🔗</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="courses.html">All Courses</a></li>
+                    <li><a href="courses.html#roadmaps">Interactive Roadmaps</a></li>
+                    <li><a href="feedback.html">Share Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="about.html#team">The Team</a></li>
+                    <li><a href="about.html#goals">Future Goals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Themes</h3>
+                <ul>
+                    <li><button class="footer-theme-link" data-theme-footer="dark">Dark Theme</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="yellow">Light Yellow</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="green">Light Green</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Tech Roadmap. All rights reserved. Built for students, educators, and beginners.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Connection -->
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

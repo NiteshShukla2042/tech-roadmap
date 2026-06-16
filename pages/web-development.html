@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Roadmap - Interactive Mind Map</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Master Web Development. Follow our structured, interactive mind map detailing Beginner, Intermediate, and Advanced milestones with curated resources.">
+    <meta name="keywords" content="Web Development, HTML, CSS, JavaScript, React, Node.js, Git, SQL, Interactive Roadmap, Mind Map">
+    <meta name="author" content="Tech Roadmap Team">
+
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets connection (Going up one level to reach CSS folder) -->
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/roadmap.css">
+</head>
+<body class="theme-dark">
+    <!-- Particle Stars Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="../courses.html#roadmaps" class="nav-link active">Roadmaps</a></li>
+                    <li><a href="../about.html" class="nav-link">About</a></li>
+                    <li><a href="../feedback.html" class="nav-link">Feedback</a></li>
+                </ul>
+                
+                <!-- Theme Switcher Control -->
+                <div class="theme-switcher-wrapper">
+                    <button class="theme-toggle-btn" id="theme-btn" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+                        <span id="theme-btn-icon">🌓</span>
+                        <span class="theme-btn-text">Theme</span>
+                    </button>
+                    <!-- Theme Dropdown Menu -->
+                    <ul class="theme-dropdown" id="theme-dropdown" role="menu">
+                        <li role="menuitem"><button class="theme-opt-btn active" data-theme="dark"><span class="theme-indicator theme-dark-indicator"></span>Dark Theme</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="yellow"><span class="theme-indicator theme-yellow-indicator"></span>Light Yellow</button></li>
+                        <li role="menuitem"><button class="theme-opt-btn" data-theme="green"><span class="theme-indicator theme-green-indicator"></span>Light Green</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation Links -->
+    <div class="container" style="margin-top: 24px;">
+        <nav class="breadcrumbs" aria-label="Breadcrumb" style="font-size: 0.9rem; color: var(--text-secondary); display: flex; gap: 8px;">
+            <a href="../index.html" style="hover: color: var(--accent-primary);">Home</a> <span>/</span>
+            <a href="../courses.html" style="hover: color: var(--accent-primary);">Courses</a> <span>/</span>
+            <span style="color: var(--text-primary); font-weight: 500;">Web Development</span>
+        </nav>
+    </div>
+
+    <!-- Main Content Grid -->
+    <main class="container" style="margin-top: 30px; margin-bottom: 80px; position: relative;">
+        
+        <!-- Hero Section -->
+        <section class="roadmap-hero" style="margin-bottom: 40px;">
+            <div class="badge">🌐 Full Stack Foundation</div>
+            <h1 style="font-size: 2.8rem; margin-bottom: 16px; font-family: 'Outfit', sans-serif;">Web Development Roadmap</h1>
+            <p style="color: var(--text-secondary); max-width: 750px; font-size: 1.1rem; margin-bottom: 24px;">
+                Learn the core skills required to build modern web applications. Follow this path step-by-step to transition from building simple web pages to deploying complex full-stack web applications.
+            </p>
+            
+            <!-- Metadata Cards -->
+            <div class="roadmap-meta-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="background-color: var(--bg-secondary); padding: 20px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md);">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">DIFFICULTY</span>
+                    <strong style="color: #10b981; font-size: 1.15rem;">Beginner to Advanced</strong>
+                </div>
+                <div style="background-color: var(--bg-secondary); padding: 20px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md);">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">ESTIMATED TIME</span>
+                    <strong style="color: var(--accent-primary); font-size: 1.15rem;">⏱️ ~300 Hours</strong>
+                </div>
+                <div style="background-color: var(--bg-secondary); padding: 20px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md);">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 4px;">TOPICS COUNT</span>
+                    <strong style="font-size: 1.15rem;">13 Core Subjects</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Progress Tracker Card -->
+        <section class="progress-tracker-bar" style="position: sticky; top: var(--header-height); z-index: 100; background-color: var(--bg-secondary); border: 1px solid var(--border-color); padding: 16px 24px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); margin-bottom: 50px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; transition: background-color var(--transition-normal);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 1.5rem;">📈</span>
+                <div>
+                    <h3 style="font-size: 1.05rem; margin-bottom: 2px;">Your Learning Progress</h3>
+                    <span id="progress-text" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">0 of 13 Topics Completed (0%)</span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px; flex-grow: 1; max-width: 400px; justify-content: flex-end;">
+                <!-- Visual fill progress bar -->
+                <div style="width: 100%; height: 10px; background-color: var(--bg-tertiary); border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color);">
+                    <div id="progress-bar-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); border-radius: 10px; transition: width 0.4s ease-out;"></div>
+                </div>
+                <span id="progress-percentage-badge" style="background-color: var(--bg-tertiary); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: 700; color: var(--accent-primary);">0%</span>
+            </div>
+        </section>
+
+        <!-- Interactive Mind Map Area -->
+        <section class="mindmap-section" style="margin-bottom: 60px;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">Interactive Mind Map Workspace</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 30px;">Hover over node cards to zoom. Click cards to view description, study resources, and estimated time. Check the boxes to save your progress.</p>
+            
+            <div class="mindmap-container">
+                <!-- SVG Canvas for connecting nodes (drawn dynamically by js/roadmap.js) -->
+                <svg class="mindmap-svg" id="mindmap-svg"></svg>
+                
+                <!-- 1. Beginner Level Column -->
+                <div class="mindmap-column" id="col-beginner">
+                    <div class="column-header level-beginner">Beginner Level</div>
+                    <div class="column-nodes">
+                        <!-- HTML Node -->
+                        <div class="mindmap-node" data-topic="html">
+                            <input type="checkbox" class="node-checkbox" id="chk-html" data-topic-id="html" aria-label="Mark HTML Completed">
+                            <span class="node-label">HTML</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- CSS Node -->
+                        <div class="mindmap-node" data-topic="css">
+                            <input type="checkbox" class="node-checkbox" id="chk-css" data-topic-id="css" aria-label="Mark CSS Completed">
+                            <span class="node-label">CSS</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- JavaScript Node -->
+                        <div class="mindmap-node" data-topic="javascript">
+                            <input type="checkbox" class="node-checkbox" id="chk-javascript" data-topic-id="javascript" aria-label="Mark JavaScript Completed">
+                            <span class="node-label">JavaScript</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Intermediate Level Column -->
+                <div class="mindmap-column" id="col-intermediate">
+                    <div class="column-header level-intermediate">Intermediate Level</div>
+                    <div class="column-nodes">
+                        <!-- Git & GitHub Node -->
+                        <div class="mindmap-node" data-topic="git">
+                            <input type="checkbox" class="node-checkbox" id="chk-git" data-topic-id="git" aria-label="Mark Git Completed">
+                            <span class="node-label">Git & GitHub</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- APIs Node -->
+                        <div class="mindmap-node" data-topic="apis">
+                            <input type="checkbox" class="node-checkbox" id="chk-apis" data-topic-id="apis" aria-label="Mark APIs Completed">
+                            <span class="node-label">APIs</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- Responsive Design Node -->
+                        <div class="mindmap-node" data-topic="responsive">
+                            <input type="checkbox" class="node-checkbox" id="chk-responsive" data-topic-id="responsive" aria-label="Mark Responsive Design Completed">
+                            <span class="node-label">Responsive Design</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- Dev Tools Node -->
+                        <div class="mindmap-node" data-topic="devtools">
+                            <input type="checkbox" class="node-checkbox" id="chk-devtools" data-topic-id="devtools" aria-label="Mark DevTools Completed">
+                            <span class="node-label">Browser DevTools</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Advanced Level Column -->
+                <div class="mindmap-column" id="col-advanced">
+                    <div class="column-header level-advanced">Advanced Level</div>
+                    <div class="column-nodes">
+                        <!-- React Node -->
+                        <div class="mindmap-node" data-topic="react">
+                            <input type="checkbox" class="node-checkbox" id="chk-react" data-topic-id="react" aria-label="Mark React Completed">
+                            <span class="node-label">React</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- Node.js Node -->
+                        <div class="mindmap-node" data-topic="nodejs">
+                            <input type="checkbox" class="node-checkbox" id="chk-nodejs" data-topic-id="nodejs" aria-label="Mark Nodejs Completed">
+                            <span class="node-label">Node.js</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- Database Node -->
+                        <div class="mindmap-node" data-topic="database">
+                            <input type="checkbox" class="node-checkbox" id="chk-database" data-topic-id="database" aria-label="Mark Database Completed">
+                            <span class="node-label">Database</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- Authentication Node -->
+                        <div class="mindmap-node" data-topic="auth">
+                            <input type="checkbox" class="node-checkbox" id="chk-auth" data-topic-id="auth" aria-label="Mark Authentication Completed">
+                            <span class="node-label">Authentication</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- Deployment Node -->
+                        <div class="mindmap-node" data-topic="deployment">
+                            <input type="checkbox" class="node-checkbox" id="chk-deployment" data-topic-id="deployment" aria-label="Mark Deployment Completed">
+                            <span class="node-label">Deployment</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                        <!-- Performance Node -->
+                        <div class="mindmap-node" data-topic="performance">
+                            <input type="checkbox" class="node-checkbox" id="chk-performance" data-topic-id="performance" aria-label="Mark Performance Completed">
+                            <span class="node-label">Performance Optimization</span>
+                            <span class="node-info-trigger">ℹ️</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Side Details Drawer (Slides in from the right, controlled by js/roadmap.js) -->
+        <aside class="detail-drawer" id="detail-drawer" aria-hidden="true" role="dialog" aria-labelledby="drawer-title">
+            <button class="drawer-close-btn" id="drawer-close" aria-label="Close details panel">✕</button>
+            <div class="drawer-content">
+                <span class="drawer-badge" id="drawer-level-badge">Beginner</span>
+                <h2 class="drawer-title" id="drawer-title">Topic Details</h2>
+                
+                <div class="drawer-meta-info" style="display: flex; gap: 16px; margin: 16px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">LEARNING ORDER</span>
+                        <strong id="drawer-order">#1</strong>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">ESTIMATED TIME</span>
+                        <strong id="drawer-time">⏱️ 15 Hours</strong>
+                    </div>
+                </div>
+
+                <div class="drawer-section">
+                    <h3>Description</h3>
+                    <p id="drawer-desc">Select a topic node from the mind map to view details.</p>
+                </div>
+
+                <div class="drawer-section">
+                    <h3>Recommended Resources</h3>
+                    <ul class="resources-list" id="drawer-resources">
+                        <!-- Resource links dynamically injected here -->
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Fallback Navigation Links -->
+        <div style="display: flex; gap: 16px; margin-top: 40px; justify-content: center;">
+            <a href="../courses.html" class="btn btn-secondary">← Back to Courses</a>
+            <a href="../index.html" class="btn btn-secondary">Go to Home</a>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Tech<span class="highlight">Roadmap</span></span>
+                </a>
+                <p class="footer-tagline">Visualizing paths to career success in technology.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="GitHub">🐙</a>
+                    <a href="#" aria-label="LinkedIn">🔗</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="../courses.html">All Courses</a></li>
+                    <li><a href="../courses.html#roadmaps">Interactive Roadmaps</a></li>
+                    <li><a href="../feedback.html">Share Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="../about.html">Our Mission</a></li>
+                    <li><a href="../about.html#team">The Team</a></li>
+                    <li><a href="../about.html#goals">Future Goals</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Themes</h3>
+                <ul>
+                    <li><button class="footer-theme-link" data-theme-footer="dark">Dark Theme</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="yellow">Light Yellow</button></li>
+                    <li><button class="footer-theme-link" data-theme-footer="green">Light Green</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Tech Roadmap. All rights reserved. Built for students, educators, and beginners.</p>
+        </div>
+    </footer>
+
+    <!-- Topic Details Data Store -->
+    <script id="roadmap-data" type="application/json">
+    {
+        "html": {
+            "title": "HTML (HyperText Markup Language)",
+            "level": "Beginner",
+            "order": 1,
+            "time": "15 Hours",
+            "desc": "HTML is the standard markup language used to structure pages on the web. It defines page headers, sections, paragraph layouts, media components, forms, and key buttons using elements and tags.",
+            "resources": [
+                {"name": "W3Schools HTML Introduction", "url": "https://www.w3schools.com/html/"},
+                {"name": "MDN Web Docs - HTML Basics", "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics"},
+                {"name": "freeCodeCamp HTML Responsive Web Design Course", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/"}
+            ]
+        },
+        "css": {
+            "title": "CSS (Cascading Style Sheets)",
+            "level": "Beginner",
+            "order": 2,
+            "time": "25 Hours",
+            "desc": "CSS styles the layout of HTML templates. It manages colors, typography, margins, paddings, responsive flex layouts, grid structures, transitions, and hover effects.",
+            "resources": [
+                {"name": "MDN Web Docs - CSS Styling", "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS"},
+                {"name": "CSS Tricks - Guide to Flexbox", "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"},
+                {"name": "CSS Tricks - Guide to CSS Grid", "url": "https://css-tricks.com/snippets/css/complete-guide-grid/"}
+            ]
+        },
+        "javascript": {
+            "title": "JavaScript (Programming Script)",
+            "level": "Beginner",
+            "order": 3,
+            "time": "45 Hours",
+            "desc": "JavaScript handles dynamic interactivity on the frontend. It manages variable scopes, logic controls, array functions, browser event triggers, DOM nodes updates, and asynchronous network API calls.",
+            "resources": [
+                {"name": "javascript.info - The Modern JS Tutorial", "url": "https://javascript.info/"},
+                {"name": "MDN Web Docs - JavaScript Basics", "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript"},
+                {"name": "Eloquent JavaScript (Free Book)", "url": "https://eloquentjavascript.net/"}
+            ]
+        },
+        "git": {
+            "title": "Git & GitHub Version Control",
+            "level": "Intermediate",
+            "order": 4,
+            "time": "12 Hours",
+            "desc": "Git tracks updates in codebase files. GitHub serves as a hosting provider for repositories, allowing developers to back up changes, collaborate, open Pull Requests, and manage deployments.",
+            "resources": [
+                {"name": "Git Cheat Sheet by GitHub", "url": "https://training.github.com/downloads/github-git-cheat-sheet.pdf"},
+                {"name": "Atlassian Git Tutorials", "url": "https://www.atlassian.com/git/tutorials"},
+                {"name": "Git & GitHub Crash Course (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=RGOj5yH7evk"}
+            ]
+        },
+        "apis": {
+            "title": "APIs (Application Programming Interfaces)",
+            "level": "Intermediate",
+            "order": 5,
+            "time": "20 Hours",
+            "desc": "APIs exchange data between applications. Learn how frontend applications call API endpoints (using `fetch()` or `Axios`) to retrieve backend databases, using HTTP methods (GET, POST, PUT, DELETE) and JSON data formats.",
+            "resources": [
+                {"name": "MDN Web Docs - Working with APIs", "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction"},
+                {"name": "REST API Tutorial", "url": "https://restfulapi.net/"},
+                {"name": "Free Public APIs List", "url": "https://github.com/public-apis/public-apis"}
+            ]
+        },
+        "responsive": {
+            "title": "Responsive Design & Layouts",
+            "level": "Intermediate",
+            "order": 6,
+            "time": "18 Hours",
+            "desc": "Responsive design ensures layouts scale seamlessly on desktop, tablet, and mobile. Understand media queries, fluid sizing, viewport meta elements, and mobile-first CSS strategies.",
+            "resources": [
+                {"name": "Google Web.dev - Responsive Design Basics", "url": "https://web.dev/learn/design/"},
+                {"name": "Responsive Web Design Principles (MDN)", "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design"},
+                {"name": "A Complete Guide to CSS Media Queries", "url": "https://css-tricks.com/a-complete-guide-to-css-media-queries/"}
+            ]
+        },
+        "devtools": {
+            "title": "Browser Developer Tools",
+            "level": "Intermediate",
+            "order": 7,
+            "time": "10 Hours",
+            "desc": "DevTools are debugging suites built directly into web browsers. Master inspecting DOM tags, tracing style rules, monitoring network requests, debugging script errors, and inspecting localStorage data.",
+            "resources": [
+                {"name": "Chrome DevTools Overview", "url": "https://developer.chrome.com/docs/devtools/"},
+                {"name": "Firefox Developer Tools Guides", "url": "https://extensionworkshop.com/documentation/develop/firefox-developer-tools/"},
+                {"name": "Debugging Javascript in Chrome DevTools", "url": "https://developer.chrome.com/docs/devtools/javascript/"}
+            ]
+        },
+        "react": {
+            "title": "React JS Library",
+            "level": "Advanced",
+            "order": 8,
+            "time": "50 Hours",
+            "desc": "React is a modular UI rendering library. It handles components, state hooks (`useState`, `useEffect`), router routing, dynamic client-side lists, and context API state providers.",
+            "resources": [
+                {"name": "React Documentation Beta (Official)", "url": "https://react.dev/"},
+                {"name": "Scrimba Free React Course", "url": "https://scrimba.com/learn/learnreact"},
+                {"name": "React Hooks Explained", "url": "https://react.dev/reference/react/hooks"}
+            ]
+        },
+        "nodejs": {
+            "title": "Node.js & Express Framework",
+            "level": "Advanced",
+            "order": 9,
+            "time": "40 Hours",
+            "desc": "Node.js runs Javascript directly on computers and servers. Express is a lightweight server framework used to set up API routing, read request inputs, send JSON data, and manage server middleware.",
+            "resources": [
+                {"name": "Node.js Introduction Guides", "url": "https://nodejs.org/en/docs/guides/getting-started-guide/"},
+                {"name": "Express.js Routing Tutorials", "url": "https://expressjs.com/en/guide/routing.html"},
+                {"name": "Free Node.js & Express Course (freeCodeCamp)", "url": "https://www.youtube.com/watch?v=Oe421EPjeBE"}
+            ]
+        },
+        "database": {
+            "title": "Database Management (SQL & NoSQL)",
+            "level": "Advanced",
+            "order": 10,
+            "time": "30 Hours",
+            "desc": "Databases persist application data. SQL systems (like PostgreSQL/MySQL) store structured data in rows and columns, while NoSQL systems (like MongoDB) manage JSON-like document models.",
+            "resources": [
+                {"name": "PostgreSQL Tutorial for Beginners", "url": "https://www.postgresqltutorial.com/"},
+                {"name": "MongoDB University Free Courses", "url": "https://university.mongodb.com/"},
+                {"name": "SQL vs NoSQL: How to Choose", "url": "https://www.mongodb.com/nosql-explained/nosql-vs-sql"}
+            ]
+        },
+        "auth": {
+            "title": "Authentication & Session Management",
+            "level": "Advanced",
+            "order": 11,
+            "time": "25 Hours",
+            "desc": "Authentication verifies user identity. Learn about hashing passwords (using bcrypt), managing session cookies, verifying JSON Web Tokens (JWT), and OAuth integration.",
+            "resources": [
+                {"name": "Auth0 - Web Authentication Guide", "url": "https://auth0.com/docs/secure"},
+                {"name": "JWT.io Introduction to JSON Web Tokens", "url": "https://jwt.io/introduction"},
+                {"name": "Password Hashing Best Practices (OWASP)", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"}
+            ]
+        },
+        "deployment": {
+            "title": "Application Deployment & Cloud hosting",
+            "level": "Advanced",
+            "order": 12,
+            "time": "22 Hours",
+            "desc": "Deployment builds and hosts codebases in production. Learn static site deployment (GitHub Pages, Vercel, Netlify), backend hosting (Render, Heroku), and basic cloud infrastructure.",
+            "resources": [
+                {"name": "Vercel Deployment Guide", "url": "https://vercel.com/docs/concepts/deployments/overview"},
+                {"name": "Render Hosting Documentation", "url": "https://render.com/docs"},
+                {"name": "Deploying Full Stack Applications", "url": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment"}
+            ]
+        },
+        "performance": {
+            "title": "Web Performance Optimization",
+            "level": "Advanced",
+            "order": 13,
+            "time": "15 Hours",
+            "desc": "Web performance optimization speeds up page loading. Learn asset compression, image lazy loading, code splitting, minimizing rendering blocking scripts, caching headers, and measuring metrics via Google Lighthouse.",
+            "resources": [
+                {"name": "Google Web.dev - Core Web Vitals", "url": "https://web.dev/vitals/"},
+                {"name": "MDN Web Performance optimization guides", "url": "https://developer.mozilla.org/en-US/docs/Web/Performance"},
+                {"name": "Compressing Assets and Lazy Loading (web.dev)", "url": "https://web.dev/fast/"}
+            ]
+        }
+    }
+    </script>
+
+    <!-- Scripts Connection (Going up one level to reach JS folder) -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/roadmap.js"></script>
+</body>
+</html>
